@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kiosk</title>
+		<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/hours.js"></script>
+		<script type="text/javascript" src="js/studyrooms.js"></script>
+		<script type="text/javascript" src="js/directions.js"></script>
+		<script type="text/javascript" src="js/maps.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+        
+        <!-- Analytics -->
+
+    </head>
+<body>
+
+
+    <div id="backdrop"></div>
+    <div id="ads">
+        <div class="background"></div>
+        <div class="ad"></div>
+        <div class="help">(Tap to return to kiosk)</div>
+    </div>
+    <div id="header">
+        <div class="heading">Heading</div>
+        <div class="time">Time</div>
+    </div>
+    <div id="content">
+
+        <div id="hours">
+            <div class="hours-list">
+                <div class="info"></div>
+                <div class="weather">
+                    <div class="blocker"></div>
+                    <a class="weatherwidget-io" href="https://forecast7.com/en/44d02n88d54/oshkosh/?unit=us" data-label_1="OSHKOSH" data-font="Arial Black" data-icons="Climacons Animated" data-days="5" data-theme="dark" data-basecolor="rgba(0, 0, 0, 0)" data-accent="rgba(255, 255, 255, 0)" data-lowcolor="#c7c7c7" data-suncolor="#f39f13" data-cloudfill="#7c7c7c" >OSHKOSH</a>
+                    <script>
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div id="map">
+            <div class="map-buttons">
+                <div class="map-button" data-map="css/images/BasementAll.jpg">Basement</div>
+                <div class="map-button" data-map="css/images/1stFloorAll.jpg">1st Floor<br/>(Main)</div>
+                <div class="map-button" data-map="css/images/2ndFloorAll.jpg">2nd Floor</div>
+                <div class="map-button" data-map="css/images/3rdFloorAll.jpg">3rd Floor</div>
+            </div>
+            <div id="map-holder"></div>
+        </div>
+        <div id="directions">
+            <div class="direction-buttons">
+                <div class="direction-button" data-top="css/images/2ndFloorAll.jpg" data-bottom="css/images/1stFloorAll.jpg" data-start="943,760" data-end="824,353">Administrative Office</div>
+                <div class="direction-button" data-top="css/images/3rdFloorAll.jpg" data-bottom="css/images/1stFloorAll.jpg" data-start="943,760" data-end="1071,404">Archives &amp; ARC</div>
+                <div class="direction-button" data-single="css/images/1stFloorAll.jpg" data-start="924,666" data-end="768,531">Circulation</div>
+                <div class="direction-button" data-single="css/images/1stFloorAll.jpg" data-start="924,666" data-end="381,406">Education Materials Center</div>
+                <div class="direction-button" data-top="css/images/BasementAll.jpg" data-bottom="css/images/1stFloorAll.jpg" data-start="943,760" data-end="1174,365">IT Help Desk</div>
+                <div class="direction-button" data-top="css/images/2ndFloorAll.jpg" data-bottom="css/images/1stFloorAll.jpg" data-start="943,760" data-end="714,374">Leisure Reading</div>
+                <div class="direction-button" data-top="css/images/BasementAll.jpg" data-bottom="css/images/1stFloorAll.jpg" data-start="943,760" data-end="1094,248">Polk 019 - 023</div>
+                <div class="direction-button" data-top="css/images/BasementAll.jpg" data-bottom="css/images/1stFloorAll.jpg" data-start="943,760" data-end="633,273">Polk 072</div>
+                <div class="direction-button" data-single="css/images/1stFloorAll.jpg" data-start="924,666" data-end="1302,484">Polk 101</div>
+                <div class="direction-button" data-single="css/images/1stFloorAll.jpg" data-start="924,666" data-end="350,535">Polk 116a</div>
+                <div class="direction-button" data-single="css/images/1stFloorAll.jpg" data-start="924,666" data-end="200,419">Polk 116b</div>
+                <div class="direction-button" data-single="css/images/1stFloorAll.jpg" data-start="924,666" data-end="384,665">Polk 118</div>
+                <div class="direction-button" data-top="css/images/2ndFloorAll.jpg" data-bottom="css/images/1stFloorAll.jpg" data-start="943,760" data-end="1314,255">Polk 201f</div>
+                <div class="direction-button" data-top="css/images/2ndFloorAll.jpg" data-bottom="css/images/1stFloorAll.jpg" data-start="943,760" data-end="863,322">Polk 202</div>
+                <div class="direction-button" data-top="css/images/BasementAll.jpg" data-bottom="css/images/1stFloorAll.jpg" data-start="943,760" data-end="1088,381">Testing Services</div>
+            </div>
+            <div id="direction-holder">
+            </div>
+            <div id="direction-markers">
+                <div class="direction-start"></div>
+                <div class="direction-end"></div>
+            </div>
+        </div>
+        <div id="studyrooms">
+            <div class="rooms"></div>
+        </div>
+
+
+    </div>
+
+
+
+    <div id="navigation">
+
+        <div class="buttons">
+            <span id="clash"> </span>
+            <div data-heading="Library Hours" data-content="#hours"><img src="css/icons/hours.png" alt="Hours" />Hours</div>
+            <div data-heading="Floor Maps" data-content="#map"><img src="css/icons/directions.png" alt="Map" />Map</div>
+            <div data-heading="Directions" data-content="#directions"><img src="css/icons/directions.png" alt="Directions" />Directions</div>
+            <div data-heading="Study Rooms" data-content="#studyrooms"><img src="css/icons/studyrooms.png" alt="Study Rooms"  />Study Rooms</div>
+        </div>
+        <span id="wordmark">UWO Libraries</span>
+    </div>
+
+
+
+</body>
+</html>
