@@ -215,12 +215,12 @@ function ButtonWalker(){
             $('#header .heading').html($('[data-content="#studyrooms"]').attr('data-heading'));
         });
     }
-    else if (!$('#studyrooms').is(':hidden')){
-        $('#studyrooms').fadeOut(500, function(){
-            $('#hours').css('display', 'flex');
-            $('#header .heading').html($('[data-content="#hours"]').attr('data-heading'));
-        });
-    }
+    // else if (!$('#studyrooms').is(':hidden')){
+        // $('#studyrooms').fadeOut(500, function(){
+            // $('#hours').css('display', 'flex');
+            // $('#header .heading').html($('[data-content="#hours"]').attr('data-heading'));
+        // });
+    // }
     else {
         $('#header .heading').html($('[data-content="#hours"]').attr('data-heading'));
         $('#hours').css('display', 'flex'); // nothing is visible, show hours
